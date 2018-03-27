@@ -1,6 +1,5 @@
 package SimonSays;
 
-public class GameCode 
-{
+public class GameCode {
 
 }
