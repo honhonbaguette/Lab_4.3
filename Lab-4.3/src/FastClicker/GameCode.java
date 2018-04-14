@@ -14,8 +14,8 @@ public class GameCode extends Application
 {
 	private boolean scoring;
 	private int scores;
-	private long timer;
-	Labeled text;
+	private Long timer;
+	Labeled txt;
 	
     public static void main(String[] args) 
     {
@@ -23,13 +23,12 @@ public class GameCode extends Application
     }
     
     @Override
-    public void start(Stage primaryStage)
+    public void start(Stage primaryStage) 
     {
-    	primaryStage.setTitle("FASTEST CLICKER");
-    	Button butt = new Button();
-    	butt.setText("HOW FAST CAN YE CLICK?");
-    	butt.setText("Click");
-    	butt.setOnAction(new EventHandler<ActionEvent>() 
+        primaryStage.setTitle("Click");
+        Button btn = new Button();
+        btn.setText("Click");
+        btn.setOnAction(new EventHandler<ActionEvent>() 
         {
             @Override
             public void handle(ActionEvent event) 
@@ -54,23 +53,21 @@ public class GameCode extends Application
 				}
 				if(!scoring)
 				{
-					butt.setText("CLICK ME REAL FAST NOW!");
+					btn.setText("Click Me!");
 				}
 				else
 				{
-					butt.setText("Score: " + Integer.toString(scores));
+					btn.setText("Score: " + Integer.toString(scores));
 					
 				}
 				
 			}
         	
         }.start();
-    }
-        
+
         StackPane root = new StackPane();
-        root.getChildren().add(butt);
-        primaryStage.setScene(new Scene(root, 1000, 1000));
+        root.getChildren().add(btn);
+        primaryStage.setScene(new Scene(root, 300, 250));
         primaryStage.show();
-        
     }
 }
